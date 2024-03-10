@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="basic.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="status">
+        <h2>Not Started</h2>
+        <div class="count" id="notStartedCount">0</div>
+        <div class="menu">
+          <button class="menu-button" onclick="toggleMenu('notStartedMenu')">
+            ...
+          </button>
+          <div class="menu-content" id="notStartedMenu">
+            <button onclick="deleteTasks('notStarted')">Delete Tasks</button>
+          </div>
+        </div>
+        <div class="add-icon" onclick="openModal('notStarted')">+</div>
+      </div>
+      <div class="status">
+        <h2>In Progress</h2>
+        <div class="count" id="inProgressCount">0</div>
+        <div class="menu">
+          <button class="menu-button" onclick="toggleMenu('inProgressMenu')">
+            ...
+          </button>
+          <div class="menu-content" id="inProgressMenu">
+            <button onclick="deleteTasks('inProgress')">Delete Tasks</button>
+          </div>
+        </div>
+        <div class="add-icon" onclick="openModal('inProgress')">+</div>
+      </div>
+      <div class="status">
+        <h2>Completed</h2>
+        <div class="count" id="completedCount">0</div>
+        <div class="menu">
+          <button class="menu-button" onclick="toggleMenu('completedMenu')">
+            ...
+          </button>
+          <div class="menu-content" id="completedMenu">
+            <button onclick="deleteTasks('completed')">Delete Tasks</button>
+          </div>
+        </div>
+        <div class="add-icon" onclick="openModal('completed')">+</div>
+      </div>
+    </nav>
+
+    <div class="task-container-wrapper">
+      <div
+        class="task-container"
+        id="notStartedTasks"
+        ondrop="drop(event, 'notStarted')"
+        ondragover="allowDrop(event)"
+      >
+        <h3>Not Started</h3>
+      </div>
+      <div
+        class="task-container"
+        id="inProgressTasks"
+        ondrop="drop(event, 'inProgress')"
+        ondragover="allowDrop(event)"
+      >
+        <h3>In Progress</h3>
+      </div>
+      <div
+        class="task-container"
+        id="completedTasks"
+        ondrop="drop(event, 'completed')"
+        ondragover="allowDrop(event)"
+      >
+        <h3>Completed</h3>
+      </div>
+    </div>
+
+    <div id="taskDetailsModal" style="display: none">
+      <h2>Task Details</h2>
+      <input type="text" id="title" placeholder="Task Title" /><br />
+      <textarea id="description" placeholder="Task Description"></textarea
+      ><br />
+      <select id="status">
+        <option value="notStarted">Not Started</option>
+        <option value="inProgress">In Progress</option>
+        <option value="completed">Completed</option></select
+      ><br />
+      <button onclick="saveTask()">Save</button>
+      <button onclick="deleteTask()">Delete</button>
+      <button onclick="cancelAddTask()">Cancel</button>
+    </div>
+
+    <script src="basic.js"></script>
+  </body>
+</html>

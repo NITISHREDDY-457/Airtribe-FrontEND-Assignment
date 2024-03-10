@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status:not(:last-child) {
+  margin-right: 20px;
+}
+
+.status h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.status .count {
+  margin-left: 5px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status .menu {
+  position: relative;
+  margin-left: auto;
+}
+
+.status .menu-button {
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.status .menu-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  right: 0;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.status .menu-content button {
+  width: 100%;
+  padding: 5px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.status .menu-content button:hover {
+  background-color: #ddd;
+}
+
+.task-container-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.task-container {
+  position: relative;
+  flex-grow: 1;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.task {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
